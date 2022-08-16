@@ -15,22 +15,13 @@ class Role < ActiveRecord::Base
 
   def lead
     hired_audition = self.auditions.select{|a| a.hired}.first
-    if(hired_audition)
-      hired_audition
-    else
-      "No actor has been hired for this role."
-    end
+    hired_audition ? hired_audition : "No actor has been hired for this role."
+    
   end
 
   def understudy
     hired_audition = self.auditions.select{|a| a.hired}.second
-    if(hired_audition)
-      hired_audition
-    else
-      "No actor has been hired for understudy for this role."
-    end
-  end
-
-  
+    hired_audition ? hired_audition : "No actor has been hired for understudy for this role."
+  end 
 
 end
