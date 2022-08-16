@@ -1,3 +1,8 @@
+Audition.destroy_all
+Role.destroy_all
+Audition.reset_pk_sequence
+Role.reset_pk_sequence
+
 puts "loading..."
 
   Audition.create(actor: "Joe", location: "LA", phone: 5555555, hired: false, role_id: 1 )
